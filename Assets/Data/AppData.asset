@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813b60a967924fceaaae7b7301975848, type: 3}
+  m_Name: AppData
+  m_EditorClassIdentifier: 
+  Groups:
+  - Name: Crazy cat
+    Id: 1
+    Keys:
+    - KeyName: C
+      Key: 0
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: Cs
+      Key: 1
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: D
+      Key: 2
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: Ds
+      Key: 3
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: E
+      Key: 4
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: F
+      Key: 5
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: Fs
+      Key: 6
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: G
+      Key: 7
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: Gs
+      Key: 8
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: A
+      Key: 9
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: As
+      Key: 10
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: H
+      Key: 11
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+    - KeyName: C2
+      Key: 12
+      AudioClip: {fileID: 8300000, guid: cf7d5778f31284de0aa17845285e97e6, type: 3}
+  - Name: Funky cat
+    Id: 2
+    Keys:
+    - KeyName: C
+      Key: 0
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: Cs
+      Key: 1
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: D
+      Key: 2
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: Ds
+      Key: 3
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: E
+      Key: 4
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: F
+      Key: 5
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: Fs
+      Key: 6
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: G
+      Key: 7
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: Gs
+      Key: 8
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: A
+      Key: 9
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: As
+      Key: 10
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: H
+      Key: 11
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
+    - KeyName: C2
+      Key: 12
+      AudioClip: {fileID: 8300000, guid: 953e4486f371a41e99dd35498f95e185, type: 3}
