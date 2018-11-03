@@ -8,7 +8,7 @@ namespace CatPiano.Data {
 
         [Header("Group data")]
         public List<GroupData> Groups;
-        
+
         [Header("BG music data")]
         public List<BgMusicData> BgMusics;
 

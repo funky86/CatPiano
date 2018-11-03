@@ -1,5 +1,4 @@
-﻿using System;
-using CatPiano.Data;
+﻿using CatPiano.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +10,7 @@ namespace CatPiano {
         [SerializeField] private Button ButtonGroupLeft;
         [SerializeField] private Text TextGroup;
         [SerializeField] private Button ButtonGroupRight;
-        
+
         [Header("BG music")]
         [SerializeField] private Button ButtonBgMusicLeft;
         [SerializeField] private Text TextBgMusic;
@@ -55,18 +54,18 @@ namespace CatPiano {
 
             ButtonGroupLeft.onClick.AddListener(() => OnGroupChangePress(-1));
             ButtonGroupRight.onClick.AddListener(() => OnGroupChangePress(1));
-            
+
             ButtonBgMusicLeft.onClick.AddListener(() => OnBgMusicChangePress(-1));
             ButtonBgMusicRight.onClick.AddListener(() => OnBgMusicChangePress(1));
 
             // the data
             AppDataController.InitCache();
-            
+
             // set initial group and BG music
             ShowGroup(1);
             PlayBgMusic(0);
         }
-        
+
         void ShowGroup(int id) {
             AppDataController.GroupId = id;
             TextGroup.text = AppDataController.GetGroupName();
@@ -77,11 +76,11 @@ namespace CatPiano {
                 BgMusicAudioSource.loop = true;
             }
             AppDataController.BgMusicId = id;
-            
+
             if (BgMusicAudioSource.isPlaying) {
                 BgMusicAudioSource.Stop();
             }
-            
+
             if (id > 0) {
                 BgMusicAudioSource.clip = AppDataController.GetBgMusicAudioClip();
                 BgMusicAudioSource.Play();
@@ -97,29 +96,29 @@ namespace CatPiano {
 
         void OnGroupChangePress(int direction) {
             int id = AppDataController.GroupId;
-            
+
             if (direction == -1) {
                 id--;
             } else {
                 id++;
             }
-            
+
             id = Mathf.Clamp(id, 1, AppDataController.GroupsCount);
-            
+
             ShowGroup(id);
         }
 
         void OnBgMusicChangePress(int direction) {
             int id = AppDataController.BgMusicId;
-            
+
             if (direction == -1) {
                 id--;
             } else {
                 id++;
             }
-            
+
             id = Mathf.Clamp(id, 0, AppDataController.BgMusicsCount);
-            
+
             PlayBgMusic(id);
         }
 

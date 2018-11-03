@@ -10,7 +10,7 @@ namespace CatPiano.Data {
 
         public String Name;
         public List<KeyData> Keys;
-        
+
         [HideInInspector] public int Id; // must not be edited by the user, it's calculated in OnValidate()
 
         [NonSerialized] public Dictionary<KeyType, AudioClip> CachedKeys = new Dictionary<KeyType, AudioClip>();

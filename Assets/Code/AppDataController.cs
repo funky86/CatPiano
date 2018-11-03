@@ -9,7 +9,7 @@ namespace CatPiano {
     public class AppDataController : MonoBehaviour {
 
         [SerializeField] private AppData Data;
-        
+
         [NonSerialized] public int GroupId;
         [NonSerialized] public int BgMusicId;
         public int GroupsCount {
@@ -29,7 +29,7 @@ namespace CatPiano {
         private int _BgMusicsCount = 0;
 
         public void InitCache() {
-            _GroupsCount  = Data.Groups.Count;
+            _GroupsCount = Data.Groups.Count;
             foreach (var group in Data.Groups) {
                 group.InitCache();
                 CachedGroups.Add(group.Id, group);
@@ -54,7 +54,7 @@ namespace CatPiano {
             var bgMusic = CachedBgMusics[BgMusicId];
             return bgMusic.AudioClip;
         }
-        
+
         public String GetBgMusicName() {
             BgMusicData data;
             if (CachedBgMusics.TryGetValue(BgMusicId, out data)) {
