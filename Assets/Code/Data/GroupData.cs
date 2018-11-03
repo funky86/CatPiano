@@ -9,8 +9,9 @@ namespace CatPiano.Data {
     public class GroupData : Object {
 
         public String Name;
-        [HideInInspector] public int Id; // must not be edited by the user, it's calculated in OnValidate()
         public List<KeyData> Keys;
+        
+        [HideInInspector] public int Id; // must not be edited by the user, it's calculated in OnValidate()
 
         [NonSerialized] public Dictionary<KeyType, AudioClip> CachedKeys = new Dictionary<KeyType, AudioClip>();
 

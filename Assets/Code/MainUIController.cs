@@ -7,10 +7,15 @@ namespace CatPiano {
 
     public class MainUIController : MonoBehaviour {
 
-        [Header("Top panel")]
+        [Header("Group")]
         [SerializeField] private Button ButtonGroupLeft;
         [SerializeField] private Text TextGroup;
         [SerializeField] private Button ButtonGroupRight;
+        
+        [Header("BG music")]
+        [SerializeField] private Button ButtonBgMusicLeft;
+        [SerializeField] private Text TextBgMusic;
+        [SerializeField] private Button ButtonBgMusicRight;
 
         [Header("Keys")]
         [SerializeField] private Button ButtonC;
@@ -28,7 +33,8 @@ namespace CatPiano {
         [SerializeField] private Button ButtonC2;
 
         [Header("Other")]
-        [SerializeField] private AudioSource AudioSource;
+        [SerializeField] private AudioSource GroupAudioSource;
+        [SerializeField] private AudioSource BgMusicAudioSource;
         [SerializeField] private AppDataController AppDataController;
 
         private void Awake() {
@@ -49,34 +55,72 @@ namespace CatPiano {
 
             ButtonGroupLeft.onClick.AddListener(() => OnGroupChangePress(-1));
             ButtonGroupRight.onClick.AddListener(() => OnGroupChangePress(1));
+            
+            ButtonBgMusicLeft.onClick.AddListener(() => OnBgMusicChangePress(-1));
+            ButtonBgMusicRight.onClick.AddListener(() => OnBgMusicChangePress(1));
 
             // the data
             AppDataController.InitCache();
+            
+            // set initial group and BG music
             ShowGroup(1);
+            PlayBgMusic(0);
         }
-
+        
         void ShowGroup(int id) {
             AppDataController.GroupId = id;
             TextGroup.text = AppDataController.GetGroupName();
         }
 
+        void PlayBgMusic(int id) {
+            if (!BgMusicAudioSource.loop) {
+                BgMusicAudioSource.loop = true;
+            }
+            AppDataController.BgMusicId = id;
+            
+            if (BgMusicAudioSource.isPlaying) {
+                BgMusicAudioSource.Stop();
+            }
+            
+            if (id > 0) {
+                BgMusicAudioSource.clip = AppDataController.GetBgMusicAudioClip();
+                BgMusicAudioSource.Play();
+            }
+
+            TextBgMusic.text = AppDataController.GetBgMusicName();
+        }
+
         void OnKeyPress(KeyType type) {
-            AudioSource.clip = AppDataController.GetAudioClip(type);
-            AudioSource.Play();
+            GroupAudioSource.clip = AppDataController.GetGroupAudioClip(type);
+            GroupAudioSource.Play();
         }
 
         void OnGroupChangePress(int direction) {
-            int groupId = AppDataController.GroupId;
+            int id = AppDataController.GroupId;
             
             if (direction == -1) {
-                groupId--;
+                id--;
             } else {
-                groupId++;
+                id++;
             }
             
-            groupId = Mathf.Clamp(groupId, 1, AppDataController.GroupsCount);
+            id = Mathf.Clamp(id, 1, AppDataController.GroupsCount);
             
-            ShowGroup(groupId);
+            ShowGroup(id);
+        }
+
+        void OnBgMusicChangePress(int direction) {
+            int id = AppDataController.BgMusicId;
+            
+            if (direction == -1) {
+                id--;
+            } else {
+                id++;
+            }
+            
+            id = Mathf.Clamp(id, 0, AppDataController.BgMusicsCount);
+            
+            PlayBgMusic(id);
         }
 
     }
